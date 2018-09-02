@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<robot name="rviz_test">
+
+  <passive_joint name="world_to_link_A" />
+
+</robot>

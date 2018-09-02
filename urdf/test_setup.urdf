@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<robot name="rviz_test">
+
+    <link name="world" />
+
+    <link name="link_A" >
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <sphere radius="0.1"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="link_B" >
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.1 0.1 0.1" />
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="world_to_link_A" type="floating">
+      <child link="link_A"/>
+      <parent link="world"/>
+    </joint>
+
+    <joint name="world_to_link_B" type="revolute">
+      <child link="link_B"/>
+      <parent link="world"/>
+      <origin xyz="1 0 0" rpy="0 0 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="0" upper="3.1415" effort="1" velocity="1" />
+    </joint>
+
+</robot>
